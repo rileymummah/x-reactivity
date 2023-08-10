@@ -18,36 +18,6 @@
 
 ## load packages ---------------------------
 library(tidyverse)
-library(magrittr)
-
-## load functions ---------------------------
-
-
-## load data ---------------------------
-
-
-## ---------------------------
-
-## ---------------------------
-## This code was written by: acr gomez & ro mummah
-## For questions: rmummah@umass.edu
-## Date Created: 2023-07-07
-## ---------------------------
-
-## ---------------------------
-## Objective: 
-##
-## 
-## Input:
-##   
-##
-## Output: 
-##
-##
-## ---------------------------
-
-## load packages ---------------------------
-library(tidyverse)
 library(fmsb)
 library(viridis)
 library(lubridate)
@@ -115,11 +85,11 @@ title.sku.pcr <- paste(fullnames," \n",round(maxp.skunk.pcr*100,digits = 1),"%",
 # continuous: average titer/(max titer) across all samples for this serovar"
 
 
-png("figures/figS2.png",width = 1740,height = 650)
-par(mfrow=c(1,3))
+png("figures/figS2.png",width = 1160,height = 650)
+par(mfrow=c(1,2), mai = c(0.1, 0.1, 1, 0.1))
 radarchart( minisku.mat, title="Skunk MAT+",
             axistype=1, pty=32, seg=5,#centerzero = T,
-            vlabels=title.sku.mat, cex.main=5,
+            vlabels=title.sku.mat, cex.main=4,
             plty=c(rep(1, numskunk.mat+1),2), plwd=2,
             pcol=c(rep("#00000000", numskunk.mat),"black","black"),
             pfcol=c(rep(colorSkunk, numskunk.mat),"#00000000","#00000000"),
@@ -127,12 +97,12 @@ radarchart( minisku.mat, title="Skunk MAT+",
             cglcol="grey", cglty=1, axislabcol="transparent", 
             #custom labels
             calcex=2,
-            vlcex=3)
+            vlcex=2)
 
 
 radarchart( minisku.pcr, title="Skunk PCR+",
             axistype=1 , pty=32, seg=5,#centerzero = T,
-            vlabels=title.sku.pcr, cex.main=5,
+            vlabels=title.sku.pcr, cex.main=4,
             plty=c(rep(1,numskunk.pcr+1),2), plwd=2,
             pcol=c(rep("#00000000",numskunk.pcr),"black","black"),
             pfcol=c(rep(colorSkunk,numskunk.pcr),"#00000000","#00000000"),
@@ -140,8 +110,8 @@ radarchart( minisku.pcr, title="Skunk PCR+",
             cglcol="grey", cglty=1, axislabcol="transparent", 
             #custom labels
             calcex=2,
-            vlcex=3)
+            vlcex=2)
 
 dev.off()
 
-
+# End script

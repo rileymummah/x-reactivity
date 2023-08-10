@@ -40,7 +40,7 @@ convertMAT <- function(x){
 # CSL
 csl.pfge <- read.table("selected samples/CSL_pfge_confirmed_only.csv", 
                        header=T, sep=',') %>% # PFGE
-  mutate(Species = 'CSL')
+              mutate(Species = 'CSL')
 
 # Foxes
 fox.pfge <- read.table("selected samples/Foxes_pfge_only_noduplicates.csv", 
@@ -56,15 +56,18 @@ fox.pfge <- read.table("selected samples/Foxes_pfge_only_noduplicates.csv",
 # Skunks
 # Only 1 PFGE skunk, so we use all of them for both datasets
 skunks <- read.csv("selected samples/Skunks_pfge_or_shedding.csv", 
-                   header=T, sep=',')[-5,] %>%
-  mutate(Species = 'skunk')
+                   header=T, sep=',') %>%
+            mutate(Species = 'skunk')
 
 
 colorFoxline  <- viridis(6,0.05,option="D")[4]
-colorFox  <- viridis(6,0.03,option="D")[4]
+colorFox  <- viridis(9,0.025,option='D')[5]#viridis(6,0.025,option="D")[4]
+# colorFoxopaque  <- viridis(6,option="D")[4]
 colorCSLline <-  viridis(1,0.05,option="D")
-colorCSL <-  viridis(1,0.03,option="D")
-colorSkunk <-  viridis(6,0.5,option="D")[6]
+colorCSL <-  viridis(9,0.03,option='D')[2]#viridis(1,0.03,option="D")
+colorCSLopaque <- viridis(1,option="D")
+colorSkunk <-  viridis(9,0.2,option='D')[8]#viridis(6,0.2,option="D")[6]
+colorSkunkopaque <-  viridis(6,option="D")[6]
 
 
 fullnames <- c("Pom","Ict","Bra","Aut","Dja")
