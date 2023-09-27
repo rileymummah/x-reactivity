@@ -46,7 +46,7 @@ mat <- filter(fox02107, Test=="MAT")
 leg <- data.frame(lab = c("Pomona","Autumnalis"),
                   x = c(as.Date("2015-06-01"), as.Date("2015-07-15")),
                   xdot = c(as.Date("2014-08-15"), as.Date("2014-08-15")),
-                  color = c("black","black"),
+                  color = c("black","cornflowerblue"),
                   lty = c('solid','dashed'),
                   y = 9:8)
 
@@ -56,15 +56,22 @@ top <- ggplot(mat) +
         xlab("") +
         scale_x_date(labels=NULL, limits = c(as.Date("2011-08-01"), as.Date("2016-01-01"))) +
         scale_y_continuous(breaks=seq(0,8,2), labels=seq(0,8,2)) +
-        geom_line(aes(x = Date, y = as.numeric(PomonaLevel)), col = 'black') +
-        geom_point(aes(x = Date, y = as.numeric(PomonaLevel)), col = 'black') +
+        geom_line(aes(x = Date, y = as.numeric(PomonaLevel)), 
+                      col = 'black') +
+        geom_point(aes(x = Date, y = as.numeric(PomonaLevel)), 
+                   col = 'black') +
+        geom_line(aes(x = Date, y = as.numeric(AutLevel)), 
+                  color="cornflowerblue", lty='dashed') +
+        geom_point(aes(x = Date, y = as.numeric(AutLevel)), 
+                   color="cornflowerblue", pch=18, cex=2.5) +
         geom_text(data = leg, aes(x=x,y=y,label=lab)) +
-        geom_point(data = leg, aes(x=xdot, y=y), col=leg$color, pch=c(19,18), cex=c(1.5,2.5)) +
-        geom_segment(data = leg, aes(x=xdot-80, xend=xdot+80, y=y, yend=y), col=leg$color, lty=leg$lty) +
-        geom_line(aes(x = Date, y = as.numeric(AutLevel)), color="black", lty='dashed') +
-        geom_point(aes(x = Date, y = as.numeric(AutLevel)), color="black",pch=18,cex=2.5)
+        geom_point(data = leg, aes(x=xdot, y=y), 
+                   col=leg$color, pch=c(19,18), cex=c(1.5,2.5)) +
+        geom_segment(data = leg, aes(x=xdot-80, xend=xdot+80, y=y, yend=y), 
+                     col=leg$color, lty=leg$lty)
+        
 
-bot <- ggplot(pcr)+
+bot <- ggplot(data=pcr) +
         theme_classic(base_size = 14)+
         scale_x_date(limits = c(as.Date("2011-08-01"), as.Date("2016-01-01")))+
         geom_point(aes(x=Date, y=1), pch=c("+","-","-","-"), cex=6)+
