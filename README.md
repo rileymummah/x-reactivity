@@ -1,4 +1,6 @@
-# [PAPER TITLE]
+# Navigating cross-reactivity in a serological assay: A case study of microscopic agglutination test for Leptospira serology![image](https://github.com/rileymummah/x-reactivity/assets/21372184/7503c5e7-82d1-411b-926b-613034733b86)
+
+
 
 *Riley O. Mummah, Ana C.R. Gomez, James O. Lloyd-Smith*
 
