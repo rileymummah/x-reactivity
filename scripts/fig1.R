@@ -25,20 +25,19 @@ library(lubridate)
 
 ## load data ---------------------------
 options(stringsAsFactors = FALSE)
-foxes <- read.csv("selected samples/Foxes_shedding_or_pfge_without_duplicates.csv")
-skunks <- read.csv("selected samples/Skunks_pfge_or_shedding.csv")
-csl <- read.csv("selected samples/CSL_shedding_or_pfge.csv")
+foxes <- read.csv("data/Foxes_shedding_or_pfge_without_duplicates.csv")
+skunks <- read.csv("data/Skunks_pfge_or_shedding.csv")
+csl <- read.csv("data/CSL_shedding_or_pfge.csv")
 
 
 ## Set colors for plotting ---------------------------
 colorFoxline  <- viridis(6,0.05,option="D")[4]
-colorFox  <- viridis(9,0.025,option='D')[5]#viridis(6,0.025,option="D")[4]
-# colorFoxopaque  <- viridis(6,option="D")[4]
+colorFox  <- viridis(9,0.025,option='D')[5]
+
 colorCSLline <-  viridis(1,0.05,option="D")
-colorCSL <-  viridis(9,0.03,option='D')[2]#viridis(1,0.03,option="D")
-colorCSLopaque <- viridis(1,option="D")
-colorSkunk <-  viridis(9,0.2,option='D')[8]#viridis(6,0.2,option="D")[6]
-colorSkunkopaque <-  viridis(6,option="D")[6]
+colorCSL <-  viridis(9,0.03,option='D')[2]
+
+colorSkunk <-  viridis(9,0.2,option='D')[8]
 
 
 
