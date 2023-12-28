@@ -6,13 +6,18 @@
 
 ## ---------------------------
 ## Objective: 
-##
+## Host-specific patterns of relative MAT antibody titers detected against 
+## five Leptospira serovars (Pomona, Djasiman, Autumnalis, Bratislava, and 
+## Icterohaemorrhagiae) when the infecting serovar is L. interrogans serovar 
+## Pomona
 ## 
 ## Input:
-##   
+##   Foxes_shedding_or_pfge_without_duplicates.csv
+##   Skunks_pfge_or_shedding.csv
+##   CSL_shedding_or_pfge.csv
 ##
 ## Output: 
-##
+##   Fig1
 ##
 ## ---------------------------
 

@@ -5,14 +5,15 @@
 ## ---------------------------
 
 ## ---------------------------
-## Objective: 
-##
+## Objective: Create Fig3
+## Selected example of longitudinal antibody titer dynamics in a 
+## Channel Island fox.
 ## 
 ## Input:
-##   
+##   fox_02107_only.csv
 ##
 ## Output: 
-##
+##   Fig3
 ##
 ## ---------------------------
 
@@ -52,7 +53,7 @@ leg <- data.frame(lab = c("Pomona","Autumnalis"),
 
 top <- ggplot(mat) +
         theme_classic(base_size = 14) +
-        ylab("log MAT titer") +
+        ylab(expression(paste(log[2],' MAT titer', sep=""))) +
         xlab("") +
         scale_x_date(labels=NULL, limits = c(as.Date("2011-08-01"), as.Date("2016-01-01"))) +
         scale_y_continuous(breaks=seq(0,8,2), labels=seq(0,8,2)) +
