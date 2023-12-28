@@ -32,15 +32,12 @@ convertMAT <- function(x){
 }
 
 ## load data ---------------------------
-fox02107 <- read.csv("data/fox_02107_only.csv") %>%
-              mutate(Date = as.Date(Date, format = "%m/%d/%y"),
-                     AutLevel = convertMAT(Autumnalis.A))
+fox02107 <- read.csv("data/fox_02107.csv") %>%
+              mutate(Date = ymd(Date))
 
 
 ## ---------------------------
 
-# fox02107$Date1 = as.Date(fox02107$Date,"%m/%d/%y")
-# fox02107$AutLevel = convertMAT(fox02107$Autumnalis.A)
 pcr <- filter(fox02107, Test=="PCR")
 mat <- filter(fox02107, Test=="MAT")
 
@@ -74,12 +71,15 @@ top <- ggplot(mat) +
 
 bot <- ggplot(data=pcr) +
         theme_classic(base_size = 14)+
-        scale_x_date(limits = c(as.Date("2011-08-01"), as.Date("2016-01-01")))+
-        geom_point(aes(x=Date, y=1), pch=c("+","-","-","-"), cex=6)+
-        scale_y_continuous(breaks=0, limits=c(0.75,1.25), labels="")+
-        ylab("PCR")+
+        scale_x_date(limits = c(as.Date("2011-08-01"), as.Date("2016-01-01"))) +
+        geom_point(aes(x=Date, y=1), pch=c("+","-","-"), cex=6) +
+        scale_y_continuous(breaks=0, limits=c(0.75,1.25), labels="") +
+        ylab("PCR") +
         xlab("Date Sampled")
 
 png("figures/fig3.png", width = 4,height = 3.5,res=300, units = "in")
-    top / bot+ plot_layout(ncol=1, heights=c(3,1))
+    top / bot + plot_layout(ncol=1, heights=c(3,1))
 dev.off()
+
+
+# End script

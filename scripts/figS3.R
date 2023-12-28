@@ -5,14 +5,16 @@
 ## ---------------------------
 
 ## ---------------------------
-## Objective: 
-##
+## Objective: Extract necessary data for plotting & analysis
+## Patterns of relative MAT antibody titers detected against five Leptospira 
+## serovars when the infecting serovar is L. interrogans serovar Pomona for 
+## MAT-positive skunks and PCR-positive skunks.
 ## 
 ## Input:
-##   
-##
+##   Skunks_matpos_nodup.csv
+##   Skunks_pfge_or_shedding.csv
 ## Output: 
-##
+##   FigS3
 ##
 ## ---------------------------
 
@@ -25,8 +27,8 @@ library(lubridate)
 
 ## load data ---------------------------
 options(stringsAsFactors = FALSE)
-skunk.mat <- read.csv("selected samples/Skunks_matpos_nodup.csv")
-skunk.pcr <- read.csv("selected samples/Skunks_pfge_or_shedding.csv")
+skunk.mat <- read.csv("data/Skunks_matpos_nodup.csv")
+skunk.pcr <- read.csv("data/Skunks_pfge_or_shedding.csv")
 
 
 ## Set colors for plotting ---------------------------
@@ -37,8 +39,6 @@ skunk.pcr <- read.csv("selected samples/Skunks_pfge_or_shedding.csv")
 # colorCSL <-  viridis(9,0.03,option='D')[2]#viridis(1,0.03,option="D")
 # colorCSLopaque <- viridis(1,option="D")
 colorSkunk <-  viridis(9,0.2,option='D')[8]#viridis(6,0.2,option="D")[6]
-colorSkunkopaque <-  viridis(6,option="D")[6]
-
 
 
 fullnames <- c("Pom","Ict","Bra","Aut","Dja")
@@ -85,7 +85,7 @@ title.sku.pcr <- paste(fullnames," \n",round(maxp.skunk.pcr*100,digits = 1),"%",
 # continuous: average titer/(max titer) across all samples for this serovar"
 
 
-png("figures/figS2.png",width = 1160,height = 650)
+png("figures/figS3.png",width = 1160,height = 650)
 par(mfrow=c(1,2), mai = c(0.1, 0.1, 1, 0.1))
 radarchart( minisku.mat, title="Skunk MAT+",
             axistype=1, pty=32, seg=5,#centerzero = T,
