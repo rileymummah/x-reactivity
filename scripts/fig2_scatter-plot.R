@@ -1,18 +1,22 @@
 ## ---------------------------
-## This code was written by: r.o. mummah
+## This code was written by: ro mummah & acr gomez
 ## For questions: rmummah@umass.edu
 ## Date Created: 2023-07-12
 ## ---------------------------
 
 ## ---------------------------
-## Objective: 
-##
+## Objective: Create scatterplot in Fig2
+## Pairwise antibody titer levels against Leptospira interrogans serovars 
+## Pomona, Djasiman, Autumnalis, Bratislava, and Icterohaemorrhagiae in three 
+## host species
 ## 
 ## Input:
-##   
+##   Foxes_shedding_or_pfge_without_duplicates.csv
+##   Skunks_pfge_or_shedding.csv
+##   CSL_shedding_or_pfge.csv
 ##
 ## Output: 
-##
+##   Scatterplot for Fig2
 ##
 ## ---------------------------
 
@@ -24,8 +28,6 @@ library(viridis)
 library(lubridate)
 library(GGally)
 library(patchwork)
-
-## load functions ---------------------------
 
 
 ## load data ---------------------------
@@ -64,7 +66,7 @@ uni <- ggplot(all) +
         scale_y_continuous(limits = c(-0.5, 15), 
                            breaks = seq(0,15, by=2)) + 
         scale_color_manual(values = c(colorFox, colorCSL, colorSkunk)) +
-        theme_bw(base_size = 18)
+        theme_bw(base_size = 20)
   
 
 noaxes <- theme(plot.margin = unit(c(0,0,0,0), "cm"),
@@ -76,10 +78,10 @@ noaxes <- theme(plot.margin = unit(c(0,0,0,0), "cm"),
                 axis.ticks.y.left = element_blank(),
                 aspect.ratio = 1)
 
-yonly <-  theme(plot.margin = unit(c(0,0,0,0), "cm"),
-                axis.title.x  = element_blank(),
-                axis.text.x = element_blank(),
-                axis.ticks.x = element_blank())
+yonly <- theme(plot.margin = unit(c(0,0,0,0), "cm"),
+               axis.title.x  = element_blank(),
+               axis.text.x = element_blank(),
+               axis.ticks.x = element_blank())
 
 xonly <- theme(plot.margin = unit(c(0,0,0,0), "cm"),
                axis.title.y =  element_blank(),
@@ -182,7 +184,7 @@ leg <- ggplot(legen) +
 
 # Create scatterplot ------------------------------------------------------
 
-png("figures/fig2.png", width = 800,height = 800)
+png("figures/fig2.png", width = 800, height = 800)
   autbra+nothing+nothing+nothing+
   autdja+bradja+nothing+leg+
   autict+braict+djaict+nothing+
@@ -190,15 +192,5 @@ png("figures/fig2.png", width = 800,height = 800)
   plot_layout(nrow=4,ncol=4)  
 dev.off()
 
+
 # End script
-
-  
-
-
-
-
-
-
-
-
-
