@@ -88,7 +88,7 @@ relskunks <- skunks/apply(skunks, FUN=max, MARGIN = 1)
 
 ####
 meancolcsl=colSums(relcsl)/dim(relcsl)[1]
-cslsample <- relcsl[sample(seq_along(relcsl$LogPom),numfoxes),] #subsampling with same number of samples as foxes
+# cslsample <- relcsl[sample(seq_along(relcsl$LogPom),numfoxes),] #subsampling with same number of samples as foxes
 meancolfox=colSums(relfoxes)/dim(relfoxes)[1]
 meansku = colSums(relskunks)/dim(relskunks)[1]
 
@@ -114,7 +114,7 @@ skunksmaxp <- colSums(skunksmaxpercent)/length(skunks[,1])
 
 
 ######
-minicsl=rbind(1 , 0 ,cslsample,meancolcsl,cslmaxp) #first row is max, second row is min,last 2 rows is average
+minicsl <- rbind(1, 0, relcsl,meancolcsl,cslmaxp) #first row is max, second row is min,last 2 rows is average
 minifox <- rbind(1 , 0 , relfoxes, meancolfox,foxesmaxp) #average and total
 minisku <- rbind(1,0,relskunks,meansku,skunksmaxp)
 
@@ -130,10 +130,10 @@ par(mfrow=c(1,3))
 
 radarchart( minicsl, title="Sea Lions", axistype=1, pty=32, seg=5,#centerzero = T,
             vlabels=csltitle, vlcex=2.5, cex.main=5,
-            plty=c(rep(1,numfoxes+1),2), 
+            plty=c(rep(1,numcsl+1),2), 
             plwd=2,
-            pcol=c(rep(colorCSLline,numfoxes),"black","black"),
-            pfcol=c(rep(colorCSL,numfoxes),"#00000000","#00000000"),
+            pcol=c(rep(colorCSLline,numcsl),"black","black"),
+            pfcol=c(rep(colorCSL,numcsl),"#00000000","#00000000"),
             cglcol="grey", cglty=1, axislabcol="transparent", 
             calcex = 2,
             caxislabels=seq(0,1,.2))
