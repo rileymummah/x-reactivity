@@ -660,8 +660,10 @@ data %>%
 
 read.csv("data/Foxes_shedding_or_pfge_without_duplicates.csv") %>%
   select(ID, LogPom, LogAut) %>%
-  mutate(`4fold` = ifelse(LogAut >= (LogPom + 4), 1, 0)) %>%
-  summarize(percent = sum(`4fold`)/n()*100)
+  mutate(`4fold` = ifelse(LogAut >= (LogPom + 2), 1, 0)) %>%
+  summarize(n = sum(`4fold`),
+            total = n(),
+            percent = n/total*100)
 
 
 
