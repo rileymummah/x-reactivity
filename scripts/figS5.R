@@ -8,7 +8,7 @@
 ## Longitudinal antibody titer dynamics in Channel Island foxes
 ## 
 ## Input:
-##   SheddersTiterDecline.csv
+##   TiterDecline.csv
 ##
 ## Output: 
 ##   FigS5
@@ -24,7 +24,7 @@ library(readr)
 ## load data ---------------------------
 
 ## Confirmed Shedders Titer Decline Plots
-DF <- read.csv("data/SheddersTiterDecline.csv")
+DF <- read.csv("data/TiterDecline.csv")
 
 ## ---------------------------
 

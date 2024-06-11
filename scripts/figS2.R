@@ -11,9 +11,9 @@
 ## Pomona for individuals with positive PFGE only
 ## 
 ## Input:
-##   CSL_pfge_confirmed_only.csv
-##   Foxes_pfge_only_noduplicates.csv
-##   Skunks_pfge_or_shedding.csv
+##   CSL_PFGE.csv
+##   Foxes_PFGE.csv
+##   Skunks_PCR-PFGE.csv
 ##
 ## Output: 
 ##   FigS2
@@ -42,19 +42,19 @@ convertMAT <- function(x){
 ## load data ---------------------------
 
 # CSL
-csl.pfge <- read.table("data/CSL_pfge_confirmed_only.csv", 
+csl.pfge <- read.table("data/CSL_PFGE.csv", 
                        header=T, sep=',') %>% # PFGE
               mutate(Species = 'CSL')
 
 # Foxes
-fox.pfge <- read.table("data/Foxes_pfge_only_noduplicates.csv", 
+fox.pfge <- read.table("data/Foxes_PFGE.csv", 
                        header=T, sep=',') %>% # PFGE only
             mutate(Species = 'fox')
 
 
 # Skunks
 # Only 1 PFGE skunk, so we use all of them for both datasets
-skunks <- read.csv("data/Skunks_pfge_or_shedding.csv", 
+skunks <- read.csv("data/Skunks_PCR-PFGE.csv", 
                    header=T, sep=',') %>%
             mutate(Species = 'skunk')
 

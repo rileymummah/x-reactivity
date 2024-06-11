@@ -10,9 +10,9 @@
 ## host species for individuals which are PFGE positive only
 ## 
 ## Input:
-##   Foxes_pfge_only_noduplicates.csv
-##   Skunks_pfge_or_shedding.csv
-##   CSL_pfge_confirmed_only.csv
+##   Foxes_PFGE.csv
+##   Skunks_PCR-PFGE.csv
+##   CSL_PFGE.csv
 ##
 ## Output: 
 ##   FigS3
@@ -30,9 +30,9 @@ library(patchwork)
 
 ## load data ---------------------------
 options(stringsAsFactors = FALSE)
-foxes <- read.csv("data/Foxes_pfge_only_noduplicates.csv")
-skunks <- read.csv("data/Skunks_pfge_or_shedding.csv")
-csl <- read.csv("data/CSL_pfge_confirmed_only.csv")
+foxes <- read.csv("data/Foxes_PFGE.csv")
+skunks <- read.csv("data/Skunks_PCR-PFGE.csv")
+csl <- read.csv("data/CSL_PFGE.csv")
 
 
 ## Set up ---------------------------

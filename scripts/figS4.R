@@ -10,8 +10,8 @@
 ## MAT-positive skunks and PCR-positive skunks.
 ## 
 ## Input:
-##   Skunks_matpos_nodup.csv
-##   Skunks_pfge_or_shedding.csv
+##   Skunks_MAT.csv
+##   Skunks_PCR-PFGE.csv
 ## Output: 
 ##   FigS4
 ##
@@ -26,8 +26,8 @@ library(lubridate)
 
 ## load data ---------------------------
 options(stringsAsFactors = FALSE)
-skunk.mat <- read.csv("data/Skunks_matpos_nodup.csv")
-skunk.pcr <- read.csv("data/Skunks_pfge_or_shedding.csv")
+skunk.mat <- read.csv("data/Skunks_MAT.csv")
+skunk.pcr <- read.csv("data/Skunks_PCR-PFGE.csv")
 
 
 ## Set colors for plotting ---------------------------

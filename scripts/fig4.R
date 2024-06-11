@@ -25,9 +25,9 @@ library(patchwork)
 
 ## load data ---------------------------
 
-data <- read.csv('data/labcomparisonEndpoint.csv')
+data <- read.csv('data/LabComparisonEndpoint.csv')
 
-labdata <- read.csv('data/labcomparisonNonEndpoint.csv')
+labdata <- read.csv('data/LabComparisonNonEndpoint.csv')
 
 
 

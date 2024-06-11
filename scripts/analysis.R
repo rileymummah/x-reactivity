@@ -11,9 +11,9 @@
 ## L. interrogans serovar Pomona
 ## 
 ## Input:
-##   Foxes_shedding_or_pfge_without_duplicates.csv
-##   Skunks_pfge_or_shedding.csv
-##   CSL_shedding_or_pfge.csv
+##   Foxes_PCR-PFGE.csv
+##   Skunks_PCR-PFGE.csv
+##   CSL_PCR-PFGE.csv
 ##
 ## Output: 
 ##   Statistical tests for supplemental tables
@@ -30,15 +30,15 @@ library(npmv)
 
 ## main text analysis ---------------------------
 options(stringsAsFactors = FALSE)
-foxes <- read.csv("data/Foxes_shedding_or_pfge_without_duplicates.csv") %>%
+foxes <- read.csv("data/Foxes_PCR-PFGE.csv") %>%
           transmute_at(2:6, as.numeric) %>%
           mutate(spp = 'fox')
 
-skunks <- read.csv("data/Skunks_pfge_or_shedding.csv") %>%
+skunks <- read.csv("data/Skunks_PCR-PFGE.csv") %>%
           transmute_at(2:6, as.numeric) %>%
           mutate(spp = 'skunk')
 
-csl <- read.csv("data/CSL_shedding_or_pfge.csv") %>%
+csl <- read.csv("data/CSL_PCR-PFGE.csv") %>%
         transmute_at(2:6, as.numeric) %>%
         mutate(spp = 'csl')
 
@@ -305,19 +305,19 @@ pairwise.wilcox.test(c(csl.bra$titer, fox.bra$titer, skunk.bra$titer),
 # supplemental text analysis (PFGE only) ----------------------------------
 
 # CSL
-csl.pfge <- read.table("data/CSL_pfge_confirmed_only.csv", 
+csl.pfge <- read.table("data/CSL_PFGE.csv", 
                        header=T, sep=',') %>% # PFGE
             mutate(Species = 'CSL')
 
 # Foxes
-fox.pfge <- read.table("data/Foxes_pfge_only_noduplicates.csv", 
+fox.pfge <- read.table("data/Foxes_PFGE.csv", 
                        header=T, sep=',') %>% # PFGE only
             mutate(Species = 'fox')
 
 
 # Skunks
 # Only 1 PFGE skunk, so we use all of them for both datasets
-skunks <- read.csv("data/Skunks_pfge_or_shedding.csv", 
+skunks <- read.csv("data/Skunks_PCR-PFGE.csv", 
                    header=T, sep=',') %>%
           mutate(Species = 'skunk')
 
@@ -578,9 +578,9 @@ pairwise.wilcox.test(c(csl.bra$titer, fox.bra$titer, skunk.bra$titer),
 
 
 # Are MAT+ skunks comparable to PFGE/culture-confirmed skunks? ------------
-skunk.mat <- read.csv("data/Skunks_matpos_nodup.csv") %>%
+skunk.mat <- read.csv("data/Skunks_MAT.csv") %>%
               mutate(test = 'MAT')
-skunk.pcr <- read.csv("data/Skunks_pfge_or_shedding.csv") %>%
+skunk.pcr <- read.csv("data/Skunks_PCR-PFGE.csv") %>%
               mutate(test = 'PFGE/culture')
 
 data <- rbind(skunk.mat, skunk.pcr)
@@ -657,7 +657,7 @@ data %>%
 
 # Calculate statistic for 4-fold increase
 
-read.csv("data/Foxes_shedding_or_pfge_without_duplicates.csv") %>%
+read.csv("data/Foxes_PCR-PFGE.csv") %>%
   select(ID, LogPom, LogAut) %>%
   mutate(`4fold` = ifelse(LogAut >= (LogPom + 2), 1, 0)) %>%
   summarize(n = sum(`4fold`),

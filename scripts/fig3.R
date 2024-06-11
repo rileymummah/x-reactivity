@@ -31,7 +31,7 @@ convertMAT <- function(x){
 }
 
 ## load data ---------------------------
-fox02107 <- read.csv("data/fox_02107.csv") %>%
+fox02107 <- read.csv("data/Fox_02107.csv") %>%
               mutate(Date = ymd(Date))
 
 

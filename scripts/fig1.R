@@ -11,9 +11,9 @@
 ## Pomona
 ## 
 ## Input:
-##   Foxes_shedding_or_pfge_without_duplicates.csv
-##   Skunks_pfge_or_shedding.csv
-##   CSL_shedding_or_pfge.csv
+##   Foxes_PCR-PFGE.csv
+##   Skunks_PCR-PFGE.csv
+##   CSL_PCR-PFGE.csv
 ##
 ## Output: 
 ##   Fig1
@@ -29,9 +29,9 @@ library(lubridate)
 
 ## load data ---------------------------
 options(stringsAsFactors = FALSE)
-foxes <- read.csv("data/Foxes_shedding_or_pfge_without_duplicates.csv")
-skunks <- read.csv("data/Skunks_pfge_or_shedding.csv")
-csl <- read.csv("data/CSL_shedding_or_pfge.csv")
+foxes <- read.csv("data/Foxes_PCR-PFGE.csv")
+skunks <- read.csv("data/Skunks_PCR-PFGE.csv")
+csl <- read.csv("data/CSL_PCR-PFGE.csv")
 
 
 ## Set colors for plotting ---------------------------
