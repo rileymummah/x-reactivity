@@ -1,7 +1,6 @@
 ## ---------------------------
 ## This code was written by: acr gomez & ro mummah
-## For questions: rmummah@umass.edu
-## Date Created: 2023-07-07
+## For questions: rom5173@ucla.edu
 ## ---------------------------
 
 ## ---------------------------
@@ -17,7 +16,7 @@
 ##   CSL_shedding_or_pfge.csv
 ##
 ## Output: 
-##   Fig1
+##   Statistical tests for supplemental tables
 ##
 ## ---------------------------
 

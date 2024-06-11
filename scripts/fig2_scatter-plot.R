@@ -1,7 +1,6 @@
 ## ---------------------------
 ## This code was written by: ro mummah & acr gomez
-## For questions: rmummah@umass.edu
-## Date Created: 2023-07-12
+## For questions: rom5173@ucla.edu
 ## ---------------------------
 
 ## ---------------------------

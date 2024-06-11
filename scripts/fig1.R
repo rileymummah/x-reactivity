@@ -1,7 +1,6 @@
 ## ---------------------------
 ## This code was written by: acr gomez & ro mummah
-## For questions: rmummah@umass.edu
-## Date Created: 2023-07-07
+## For questions: rom5173@ucla.edu
 ## ---------------------------
 
 ## ---------------------------
@@ -141,3 +140,4 @@ radarchart( minisku, title="Skunks",axistype=1 , pty=32, seg=5,#centerzero = T,
 
 dev.off()
 
+# End script
