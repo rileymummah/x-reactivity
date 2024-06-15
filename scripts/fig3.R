@@ -76,7 +76,7 @@ bot <- ggplot(data=pcr) +
         ylab("PCR") +
         xlab("Date Sampled")
 
-png("figures/fig3.png", width = 4,height = 3.5,res=300, units = "in")
+tiff("figures/fig3.tiff", width = 4, height = 3.5,res=300, units = "in")
     top / bot + plot_layout(ncol=1, heights=c(3,1))
 dev.off()
 

@@ -69,7 +69,9 @@ colorSkunk <- viridis(9, option="D")[8]
 boxplot <- ggplot(all) +
             theme_bw(base_size=20) +
             theme(panel.grid = element_blank(),
-                  plot.margin = unit(c(1,1,1,1), "cm"), aspect.ratio =.5) +
+                  plot.margin = unit(c(1,1,1,1), "cm"),
+                  plot.background = element_blank(),
+                  aspect.ratio = .5) +
             ylab(expression(paste(log[2]," MAT titer", sep=""))) +
             xlab("") +
             geom_boxplot(aes(both, value, color=Species), show.legend = F) +
@@ -92,9 +94,9 @@ boxplot <- ggplot(all) +
             scale_color_manual(values = c(colorCSL,colorFox,colorSkunk)) 
 
 
-png("figures/fig2-boxplot.png", width=500, height = 300)
-  boxplot
-dev.off()
+# tiff("figures/fig2-boxplot.tiff", width=500, height = 300)
+#   boxplot
+# dev.off()
 
 
 # End script

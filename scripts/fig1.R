@@ -102,7 +102,8 @@ skunktitle <- paste(fullnames," \n",round(skunksmaxp*100,digits = 1),"%",sep="")
 # continuous: average titer/(max titer) across all samples for this serovar"
 
 
-png("figures/fig1.png",width = 1740,height = 650)
+# png("figures/fig1.png",width = 1740,height = 650)
+tiff("figures/fig1.tiff", width = 1740, height = 650)
 par(mfrow=c(1,3))
 radarchart( minicsl,title="Sea Lions", axistype=1 , pty=32, seg=5,#centerzero = T,
             vlabels=csltitle, vlcex=3, cex.main=5,

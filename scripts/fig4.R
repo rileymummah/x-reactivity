@@ -88,10 +88,10 @@ ggplot(data=data, aes(Lab, Titer, color = Serovar)) +
 
 
 # Assemble plot
-top / bottom + plot_layout(nrow = 2) + plot_annotation(tag_levels = list(c('A','','','B')))
+top / bottom + plot_layout(nrow = 2) + 
+  plot_annotation(tag_levels = list(c('A','','','B')))
 
-
-ggsave('figures/fig4.png', 
-       width = 6.5, height = 5.5, units = 'in', dpi=600)
+ggsave('figures/fig4.tiff', 
+       width = 2000, height = 1900, units = 'px', dpi=300)
 
 # End script
